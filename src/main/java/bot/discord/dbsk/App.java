@@ -71,7 +71,8 @@ public class App
                 discord.sendMessage("get it");
             }
         }else if(objMsg.getContentRaw().equals(Constants.PREFIX + "weather")){
-            discord.sendMessage(API.getWeather("Vancouver","Ca",0));
+            API api = new API();
+            discord.sendMessage(api.getWeather("Vancouver","Ca",0));
         }
 
     }
