@@ -71,7 +71,9 @@ public class App
         if(objMag.getContentRav() .equals(Constants.PREFIX + "repeat")){
             for(int i = 0; i < 5; i++){
                 discord.sendMessage("get it");
-            }}
+            }
+        }
+    }
    
     
     public static void emojiEvent(MessageReactionAddEvent evt) {
