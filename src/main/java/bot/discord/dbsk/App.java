@@ -65,10 +65,10 @@ public class App
     public static void messageEvent(MessageReceivedEvent evt) {
     	//When a message is sent, this method will be called.
     	//evt contains all the information you need about the message.
-        Message objMag = evt.getChannel();
+        Message objMsg = evt.getMessage();
         MessageChannel objMsgCh = evt.getChannel();
         
-        if(objMag.getContentRav() .equals(Constants.PREFIX + "repeat")){
+        if(objMsg.getContentRaw() .equals(Constants.PREFIX + "repeat")){
             for(int i = 0; i < 5; i++){
                 discord.sendMessage("get it");
             }
