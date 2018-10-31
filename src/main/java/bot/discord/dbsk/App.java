@@ -1,8 +1,6 @@
 package bot.discord.dbsk;
 
-import discord.Constants;
-import discord.Discord;
-import discord.Music;
+import discord.*;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.MessageChannel;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
@@ -68,11 +66,14 @@ public class App
         Message objMsg = evt.getMessage();
         MessageChannel objMsgCh = evt.getChannel();
         
-        if(objMsg.getContentRaw() .equals(Constants.PREFIX + "repeat")){
+        if(objMsg.getContentRaw().equals(Constants.PREFIX + "repeat")){
             for(int i = 0; i < 5; i++){
                 discord.sendMessage("get it");
             }
+        }else if(objMsg.getContentRaw().equals(Constants.PREFIX + "weather")){
+            discord.sendMessage(API.getWeather("Vancouver","Ca",0));
         }
+
     }
    
     
