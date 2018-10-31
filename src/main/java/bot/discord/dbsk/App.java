@@ -1,6 +1,7 @@
 package bot.discord.dbsk;
 
 import discord.*;
+import bot.discord.api*;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.MessageChannel;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
