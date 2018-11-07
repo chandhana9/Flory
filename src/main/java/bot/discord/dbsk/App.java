@@ -78,8 +78,9 @@ public class App
             }catch(Exception e){
                 
             }
+        }else if(objMsg.getContentRaw().equals(Constants.PREFIX + "ping")){
+                discord.sendMessage("pong");
         }
-
     }
    
     
