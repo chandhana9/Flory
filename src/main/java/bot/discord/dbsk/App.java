@@ -104,7 +104,7 @@ public class App
             for(int i = 0; i < input.length(); i ++){
                 output+= input.substring(i, i+1)+ " ";
             }
-            dicord.sendMessage(output);
+            discord.sendMessage(output);
         }
     }    
    
