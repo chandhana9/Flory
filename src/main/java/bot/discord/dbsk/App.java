@@ -80,25 +80,25 @@ public class App
             input =  objMsg.getContentRaw().substring(objMsg.getContentRaw().indexOf(" "));
         }catch(Exception e){}
         
-        if(command.equals(Constants.PREFIX + "repeat")){
+        if(command.equals("repeat")){
             for(int i = 0; i < 5; i++){
                 discord.sendMessage("@Kieran Ross My name jeff");
             }
-        }else if(command.equals(Constants.PREFIX + "ping")){
+        }else if(command.equals("ping")){
             discord.sendMessage("pong");
         }
-        if(objMsg.getContentRaw().equals(Constants.PREFIX + "repeat")){
+        if(objMsg.getContentRaw().equals("repeat")){
             for(int i = 0; i < 5; i++){
                 discord.sendMessage("get it");
             }
-        }else if(objMsg.getContentRaw().equals(Constants.PREFIX + "weather")){
+        }else if(objMsg.getContentRaw().equals("weather")){
             API api = new API();
             try{
                 discord.sendMessage(api.getWeather("Vancouver","Ca",0));
             }catch(Exception e){
                 
             }
-        }else if(objMsg.getContentRaw().equals(Constants.PREFIX + "ping")){
+        }else if(objMsg.getContentRaw().equals("ping")){
                 discord.sendMessage("pong");
         }else if (command.equals("spongebob")){
             String output = "";
