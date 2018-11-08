@@ -67,6 +67,25 @@ public class App
         Message objMsg = evt.getMessage();
         MessageChannel objMsgCh = evt.getChannel();
         
+       //When a message is sent, this method will be called.
+        //evt contains all the information you need about the message.
+        Message objMsg = evt.getMessage();
+        MessageChannel objMsgCh = evt.getChannel();
+
+        if(!objMsg.getContentRaw().startsWith(Constants.PREFIX)){
+            return;
+        }
+
+        String command = objMsg.getContentRaw().substring(1,objMsg.getContentRaw().indexOf(" "));
+        String input = objMsg.getContentRaw().substring(objMsg.getContentRaw().indexOf(" "));
+
+        if(command.equals(Constants.PREFIX + "repeat")){
+            for(int i = 0; i < 5; i++){
+                discord.sendMessage("@Kieran Ross My name jeff");
+            }
+        }else if(command.equals(Constants.PREFIX + "ping")){
+            discord.sendMessage("pong");
+        }
         if(objMsg.getContentRaw().equals(Constants.PREFIX + "repeat")){
             for(int i = 0; i < 5; i++){
                 discord.sendMessage("get it");
@@ -80,8 +99,14 @@ public class App
             }
         }else if(objMsg.getContentRaw().equals(Constants.PREFIX + "ping")){
                 discord.sendMessage("pong");
+        }else if (command.equals("spongebob")){
+            String output = "";
+            for(int i = 0; i < input.length(); i ++){
+                output+= input.substring(i, i+1)+ " ";
+            }
+            dicord.sendMessage(output);
         }
-    }
+    }    
    
     
     public static void emojiEvent(MessageReactionAddEvent evt) {
