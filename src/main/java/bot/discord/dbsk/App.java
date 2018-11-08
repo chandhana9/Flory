@@ -71,9 +71,15 @@ public class App
             return;
         }
 
-        String command = objMsg.getContentRaw().substring(1,objMsg.getContentRaw().indexOf(" "));
-        String input = objMsg.getContentRaw().substring(objMsg.getContentRaw().indexOf(" "));
-
+        String command = objMsg.getContentRaw().substring(1);
+        try{
+            command = objMsg.getContentRaw().substring(1,objMsg.getContentRaw().indexOf(" "));
+        }catch(Exception e){}
+        String input = "";
+        try{
+            input =  objMsg.getContentRaw().substring(objMsg.getContentRaw().indexOf(" "));
+        }catch(Exception e){}
+        
         if(command.equals(Constants.PREFIX + "repeat")){
             for(int i = 0; i < 5; i++){
                 discord.sendMessage("@Kieran Ross My name jeff");
