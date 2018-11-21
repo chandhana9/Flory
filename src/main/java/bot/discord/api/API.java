@@ -26,7 +26,7 @@ import com.google.api.services.youtube.model.SearchListResponse;
 
 public class API {
 
-	public String requestAPI(String URL) throws IOException {
+	public static String requestAPI(String URL) throws IOException {
 		String body = "";
 		URL url = new URL(URL);
 		URLConnection con = url.openConnection();

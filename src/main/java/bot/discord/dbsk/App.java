@@ -6,6 +6,10 @@ import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.MessageChannel;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.events.message.react.MessageReactionAddEvent;
+import com.google.gson.JsonObject;
+import com.googlegson.JsonArray;
+import com.google.gson.JsonParser;
+
 
 //DBSK v1.0.1
 
@@ -106,6 +110,12 @@ public class App
                 output+= input.substring(i, i+1)+ " ";
             }
             discord.sendMessage(output);
+        }else if (command.equals("News")){
+            String json = "";
+            try{
+                json = API.requestAPI("https://newsapi.org/v2/top-headlines?country=ca&apiKey=d84cd61388cb4e949872d398e65fe20a");
+            }catch(Exception e){}
+            JsonObject News = JsonParser().parse(json).getAsJsonObject();       
         }
     }    
    
