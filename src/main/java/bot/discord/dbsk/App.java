@@ -115,8 +115,9 @@ public class App
             try{
                 json = API.requestAPI("https://newsapi.org/v2/top-headlines?country=ca&apiKey=d84cd61388cb4e949872d398e65fe20a");
             }catch(Exception e){}
+            System.out.println(json);
             JsonObject News = (JsonObject)(new JsonParser().parse(json).getAsJsonObject());      
-            String url = ((JsonObject)(News)).get("articles").getAsJsonArray().get(0).get("url").getAsString();
+            String url = News.get("articles").getAsJsonArray().get(0).get("url").getAsString();
             discord.sendMessage(url);
         }   
     }    
