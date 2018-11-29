@@ -113,7 +113,16 @@ public class App
         }else if (command.equals("News")){
             String json = "";
             try{
-                json = API.requestAPI("https://newsapi.org/v2/top-headlines?country=ca&apiKey=d84cd61388cb4e949872d398e65fe20a");
+                json = API.requestAPI("https://newsapi.org/v2/top-headlines?country="+input+"&apiKey=d84cd61388cb4e949872d398e65fe20a");
+            }catch(Exception e){}
+            JsonObject News = (JsonObject)(new JsonParser().parse(json).getAsJsonObject());
+            
+            String url = News.get("articles").getAsJsonArray().get(0).getAsJsonObject().get("url").getAsString();
+            discord.sendMessage(url);
+        }else if (command.equals("News-Africa")){
+            String json = "";
+            try{
+                json = API.requestAPI("https://newsapi.org/v2/top-headlines?country=za&apiKey=d84cd61388cb4e949872d398e65fe20a");
             }catch(Exception e){}
             
             System.out.println(json);
@@ -121,7 +130,8 @@ public class App
             
             String url = News.get("articles").getAsJsonArray().get(0).getAsJsonObject().get("url").getAsString();
             discord.sendMessage(url);
-        }   
+        }
+         
     }    
    
     
