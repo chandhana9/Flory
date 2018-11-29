@@ -23,33 +23,43 @@ public class Discord  extends ListenerAdapter{
 	public Discord(String token) {
 		try {
 			jda = new JDABuilder(AccountType.BOT).setToken(token).build();
+                        addListener();
 		} catch (LoginException e) {
 			e.printStackTrace();
 		}
 		
 		waitForConnection();
+               
 	}
 	
 	//Use this constructor if you're using this starter kit to make something other than a chat bot, although this kit is not very compatible with anything else.
 	public Discord(AccountType at) {
 		try {
 			jda = new JDABuilder(at).build();
+                        addListener();
 		} catch (LoginException e) {
 			e.printStackTrace();
 		}
 		
 		waitForConnection();
+                
 	}
 	
 	//Use this constructor if you have already initialised a JDA
 	public Discord(JDA jda) {
 		this.jda = jda;
+                addListener();
 		waitForConnection();
+                
 	}
 		
 	public JDA getJDA() {
 		return jda;
 	}
+        
+        public void addListener(){
+            jda.addEventListener(this);
+        }
 	
 	public boolean isAppOnline() {
 		return jda.getStatus().equals(Status.CONNECTED);
