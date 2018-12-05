@@ -111,6 +111,8 @@ public class App
             }
             discord.sendMessage(output);
         }else if (command.equals("News")){
+            //%News ca
+            //%News za
             String json = "";
             try{
                 json = API.requestAPI("https://newsapi.org/v2/top-headlines?country="+input+"&apiKey=d84cd61388cb4e949872d398e65fe20a");
