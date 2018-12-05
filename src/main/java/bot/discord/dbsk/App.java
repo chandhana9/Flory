@@ -132,7 +132,19 @@ public class App
             
             String url = News.get("articles").getAsJsonArray().get(0).getAsJsonObject().get("url").getAsString();
             discord.sendMessage(url);
-        }
+        }else if (command.equals("News-Japan")){
+            String json = "";
+            try{
+                json = API.requestAPI("https://newsapi.org/v2/top-headlines?country=jp&apiKey=d84cd61388cb4e949872d398e65fe20a");
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+            
+            System.out.println(json);
+            JsonObject News = (JsonObject)(new JsonParser().parse(json).getAsJsonObject());
+            
+            String url = News.get("articles").getAsJsonArray().get(0).getAsJsonObject().get("url").getAsString();
+            discord.sendMessage(url);
          
     }    
    
