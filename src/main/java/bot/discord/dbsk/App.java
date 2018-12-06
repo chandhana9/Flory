@@ -145,6 +145,7 @@ public class App
             
             String url = News.get("articles").getAsJsonArray().get(0).getAsJsonObject().get("url").getAsString();
             discord.sendMessage(url);
+        }
          
     }    
    
