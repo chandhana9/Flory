@@ -145,6 +145,13 @@ public class App
             
             String url = News.get("articles").getAsJsonArray().get(0).getAsJsonObject().get("url").getAsString();
             discord.sendMessage(url);
+        }else if (command.equals("Join")){
+            Music.joinChannel(493168112338862082L);
+        }else if (command.equals("Play")){
+            System.out.println(input);
+            Music.play(input);
+        }else if (command.equals("Leave")){
+            Music.exitChannel();
         }
          
     }    
