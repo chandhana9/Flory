@@ -93,15 +93,10 @@ public class App
         }else if(command.equals("flip")){
             if (((int)(Math.random()*2)+1)==1){
                 discord.sendMessage("Heads");
-            }
-            else{
+            }else{
                 discord.sendMessage("Tails");
             } 
-        }
-        
-        
-        
-        if(objMsg.getContentRaw().equals("repeat")){
+        }else if(objMsg.getContentRaw().equals("repeat")){
             for(int i = 0; i < 5; i++){
                 discord.sendMessage("get it");
             }
