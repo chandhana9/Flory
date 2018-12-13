@@ -86,11 +86,22 @@ public class App
         
         if(command.equals("repeat")){
             for(int i = 0; i < 5; i++){
-                discord.sendMessage("@Kieran Ross My name jeff");
+                discord.sendMessage("test repeat");
             }
         }else if(command.equals("ping")){
             discord.sendMessage("pong");
+        }else if(command.equals("flip")){
+            discord.sendMessage("test");
+            /*if (((int)(Math.random()*2)+1)==1){
+                discord.sendMessage("Heads");
+            }
+            else{
+                discord.sendMessage("Tails");
+            }*/ 
         }
+        
+        
+        
         if(objMsg.getContentRaw().equals("repeat")){
             for(int i = 0; i < 5; i++){
                 discord.sendMessage("get it");
@@ -153,8 +164,8 @@ public class App
         }else if (command.equals("Leave")){
             Music.exitChannel();
         }
-         
-    }    
+    }
+     
    
     
     public static void emojiEvent(MessageReactionAddEvent evt) {
