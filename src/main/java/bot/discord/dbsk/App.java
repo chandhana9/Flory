@@ -91,7 +91,7 @@ public class App
         }else if(command.equals("ping")){
             discord.sendMessage("pong");
         }else if(command.equals("flip")){
-            if (((int)(Math.random()*2)+1)==1){
+            if (((int)(Math.random()*2))==1){
                 discord.sendMessage("Heads");
             }else{
                 discord.sendMessage("Tails");
