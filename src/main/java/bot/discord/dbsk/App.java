@@ -131,8 +131,6 @@ public class App
             try{
                 json = API.requestAPI("https://newsapi.org/v2/top-headlines?country=za&apiKey=d84cd61388cb4e949872d398e65fe20a");
             }catch(Exception e){}
-            
-            System.out.println(json);
             JsonObject News = (JsonObject)(new JsonParser().parse(json).getAsJsonObject());
             
             String url = News.get("articles").getAsJsonArray().get(0).getAsJsonObject().get("url").getAsString();
@@ -144,8 +142,6 @@ public class App
             }catch(Exception e){
                 e.printStackTrace();
             }
-            
-            System.out.println(json);
             JsonObject News = (JsonObject)(new JsonParser().parse(json).getAsJsonObject());
             
             String url = News.get("articles").getAsJsonArray().get(0).getAsJsonObject().get("url").getAsString();
@@ -153,8 +149,7 @@ public class App
         }else if (command.equals("Join")){
             Music.joinChannel(493168112338862082L);
         }else if (command.equals("Play")){
-            System.out.println(input);
-            Music.play(input);
+            Music.play("https://www.youtube.com/watch?v=4WrqbDFGiuc");
         }else if (command.equals("Leave")){
             Music.exitChannel();
         }
