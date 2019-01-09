@@ -149,7 +149,7 @@ public class App
         }else if (command.equals("Join")){
             Music.joinChannel(493168112338862082L);
         }else if (command.equals("Play")){
-            Music.play("https://www.youtube.com/watch?v=4WrqbDFGiuc");
+            Music.play(input.replace(" ", ""));
         }else if (command.equals("Leave")){
             Music.exitChannel();
         }
