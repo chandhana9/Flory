@@ -86,29 +86,29 @@ public class App
         
         if(command.equals("repeat")){
             for(int i = 0; i < 5; i++){
-                discord.sendMessage("test repeat");
+                discord.sendMessage("test repeat",objMsgCh);
             }
         }else if(command.equals("ping")){
-            discord.sendMessage("pong");
+            discord.sendMessage("pong",objMsgCh);
         }else if(command.equals("flip")){
             if (((int)(Math.random()*2))==1){
-                discord.sendMessage("Heads");
+                discord.sendMessage("Heads",objMsgCh);
             }else{
-                discord.sendMessage("Tails");
+                discord.sendMessage("Tails",objMsgCh);
             } 
         }else if(objMsg.getContentRaw().equals("repeat")){
             for(int i = 0; i < 5; i++){
-                discord.sendMessage("get it");
+                discord.sendMessage("get it",objMsgCh);
             }
         }else if(objMsg.getContentRaw().equals("weather")){
             API api = new API();
             try{
-                discord.sendMessage(api.getWeather("Vancouver","Ca",0));
+                discord.sendMessage(api.getWeather("Vancouver","Ca",0,objMsgCh));
             }catch(Exception e){
                 
             }
         }else if(objMsg.getContentRaw().equals("ping")){
-                discord.sendMessage("pong");
+                discord.sendMessage("pong",objMsgCh);
         }else if (command.equals("spongebob")){
             String output = "";
             for(int i = 0; i < input.length(); i ++){
@@ -125,7 +125,7 @@ public class App
             JsonObject News = (JsonObject)(new JsonParser().parse(json).getAsJsonObject());
             
             String url = News.get("articles").getAsJsonArray().get(0).getAsJsonObject().get("url").getAsString();
-            discord.sendMessage(url);
+            discord.sendMessage(url,objMsgCh);
         }else if (command.equals("News-Africa")){
             String json = "";
             try{
@@ -134,7 +134,7 @@ public class App
             JsonObject News = (JsonObject)(new JsonParser().parse(json).getAsJsonObject());
             
             String url = News.get("articles").getAsJsonArray().get(0).getAsJsonObject().get("url").getAsString();
-            discord.sendMessage(url);
+            discord.sendMessage(url,objMsgCh);
         }else if (command.equals("News-Japan")){
             String json = "";
             try{
@@ -145,7 +145,7 @@ public class App
             JsonObject News = (JsonObject)(new JsonParser().parse(json).getAsJsonObject());
             
             String url = News.get("articles").getAsJsonArray().get(0).getAsJsonObject().get("url").getAsString();
-            discord.sendMessage(url);
+            discord.sendMessage(url,objMsgCh);
         }else if (command.equals("Join")){
             Music.joinChannel(493168112338862082L);
         }else if (command.equals("Play")){
