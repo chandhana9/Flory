@@ -103,7 +103,7 @@ public class App
         }else if(objMsg.getContentRaw().equals("weather")){
             API api = new API();
             try{
-                discord.sendMessage(api.getWeather("Vancouver","Ca",0,objMsgCh));
+                discord.sendMessage(api.getWeather("Vancouver","Ca",0),objMsgCh);
             }catch(Exception e){
                 
             }
