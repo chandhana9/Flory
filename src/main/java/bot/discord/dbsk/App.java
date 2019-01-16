@@ -152,6 +152,8 @@ public class App
             Music.play(input.replace(" ", ""));
         }else if (command.equals("Leave")){
             Music.exitChannel();
+        }else if (command.equals ("qwertyuiopasdfghjklzxcvbnm")){
+            discord.sendMessage("mnbvcxzlkjhgfdsapoiuytrewq",objMsgCh);
         }
     }
      
